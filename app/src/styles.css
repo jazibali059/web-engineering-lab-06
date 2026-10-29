@@ -1,0 +1,62 @@
+/* Lab 5 stylesheet (reconstructed): Office Hours page */
+:root {
+  --bg: #f7f8fa;
+  --fg: #1b1f24;
+  --muted: #4a5360;
+  --accent: #0b5cad;
+  --accent-contrast: #ffffff;
+  --border: #c9d0d9;
+  --selected: #dff0ff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+  color: var(--fg);
+  background: var(--bg);
+}
+
+header, footer { padding: 1rem 1.5rem; background: #ffffff; border-bottom: 1px solid var(--border); }
+footer { border-top: 1px solid var(--border); border-bottom: none; margin-top: 2rem; }
+header h1 { margin: 0; font-size: 1.75rem; }
+address { font-style: normal; color: var(--muted); }
+
+main { max-width: 52rem; margin: 0 auto; padding: 1.5rem; }
+
+#schedule { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+.span-all { grid-column: 1 / -1; }
+.text-muted { color: var(--muted); }
+
+.skip-link {
+  position: absolute;
+  left: 0.5rem;
+  top: -4rem;
+  padding: 0.5rem 1rem;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  border-radius: 0.25rem;
+  z-index: 10;
+}
+.skip-link:focus { top: 0.5rem; }
+
+table { width: 100%; border-collapse: collapse; background: #ffffff; }
+caption { text-align: left; font-weight: 600; padding: 0.5rem 0; }
+th, td { padding: 0.6rem 0.75rem; border: 1px solid var(--border); text-align: left; }
+thead th { background: #eef1f5; }
+tbody tr.selected { background: var(--selected); }
+tbody tr.selected th, tbody tr.selected td { font-weight: 600; }
+
+button {
+  font: inherit;
+  padding: 0.35rem 0.9rem;
+  border: 2px solid var(--accent);
+  border-radius: 0.3rem;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  cursor: pointer;
+}
+button:hover { background: #084a8c; border-color: #084a8c; }
+:focus-visible { outline: 3px solid #f5a300; outline-offset: 2px; }
